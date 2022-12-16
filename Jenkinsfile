@@ -1,6 +1,6 @@
 node {
 
-   def registryProjet='web/'
+   def registryProjet='guigus76/'
    def IMAGE="${registryProjet}app:3.5"
 
     stage('Clone') {
@@ -18,7 +18,7 @@ node {
     }
 
     stage('Push') {
-          docker.withRegistry('https://hub.docker.com', 'docker_hub_id') {
+          docker.withRegistry('https://docker.io', 'docker_hub_id') {
               img.push 'latest'
               img.push()
           }
